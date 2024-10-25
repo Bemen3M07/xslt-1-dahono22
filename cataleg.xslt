@@ -12,7 +12,8 @@
       <th style="text-align:left">Price</th>
     </tr>
     <xsl:for-each select="catalog/cd">
-    <xsl:if test="price &lt; 10">
+    <!-- <xsl:if test="price &lt; 10">-->
+    <xsl:if test="price &lt; 5">
     <!-- <xsl:for-each select="catalog/cd[country='USA']"> -->
     <!-- <xsl:sort select="artist -->
     <tr>
@@ -20,9 +21,21 @@
       <td><xsl:value-of select="artist"/></td>
       <td><xsl:value-of select="country"/></td>
       <td><xsl:value-of select="price"/></td>
+      <td style="text-align:left">&#10084;</td>
     </tr>
     </xsl:if>
     </xsl:for-each>
+    <xsl:for-each select="catalog/cd">
+    <!-- <xsl:if test="price &lt; 10">-->
+    <xsl:if test="price &gt; 5">
+    <!-- <xsl:for-each select="catalog/cd[country='USA']"> -->
+    <!-- <xsl:sort select="artist -->
+    <tr>
+      <td><xsl:value-of select="title"/></td>
+      <td><xsl:value-of select="artist"/></td>
+      <td><xsl:value-of select="country"/></td>
+      <td><xsl:value-of select="price"/></td>
+      <td style="text-align:left">&#128148;</td>
   </table>
 </body>
 </html>
